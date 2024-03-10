@@ -1,10 +1,10 @@
 // Import necessary modules
 const express = require("express");
 const router = express.Router();
-const UserData = require("../model/UserData");
+const UserData = require("../model/userdata");
 
 // Define a route handler for saving user data
-router.get("/", async (req, res) => {
+router.get("/login", async (req, res) => {
   try {
     // Fetch all user data from the database
     const userData = await UserData.find();

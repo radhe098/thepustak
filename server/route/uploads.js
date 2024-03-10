@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const pdfDetails = require("../model/file");
+const pdfDetails = require("../model/booksdata");
 router.use("/files",express.static("files"));
 const path = require("path");
 const multer = require("multer");
@@ -31,7 +31,7 @@ router.post("/upload-files", upload.single("file"), async (req, res) => {
   }
 });
 
-router.get("/get-files", async (req, res) => {
+router.get("/get-files", async (req, res) => {  
   try {
     await PdfSchema.find({}).then((data) => { // Wrap the code inside a try-catch block
       res.send({ status: "ok", data: data });
