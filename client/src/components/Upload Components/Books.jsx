@@ -84,6 +84,8 @@ function Books() {
       <option name="Manga" id="Manga">Manga</option>
       <option name="Fiction" id="Fiction">Fiction</option>
       <option name="Non-Fiction" id="Non-Fiction">Non-Fiction</option>
+      <option name="Learning" id="Learning">Learning</option>
+      {/* <option name="" id=""></option> */}
       </select> 
       <input
         type="file"

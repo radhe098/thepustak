@@ -1,0 +1,51 @@
+ {/* <div className="border-black border-2 m-2 bg-green-200 text-2xl rounded-2xl pr-4 pl-4  min-w-[20rem] h-[12rem]">
+        Non-Fiction Feed
+        <div className="bookcontainer w-[auto] flex justify-between overflow-auto ">
+        <div className="overflow-x-auto flex justify-between flex-row gap-10" style={{flexWrap: 'nowrap', overflowX: 'auto'}}>
+            {books.map((book) => (
+                <div className="text-lg align-center flex-wrap flex justify-between ">
+                    <img key={randomBookId}
+                        src="/bookcover.jpeg"
+                        className="object-cover h-[7rem] min-w-[6rem] "
+                        alt=""
+                    />
+                    {randomBookId}
+                </div>
+            ))}
+        </div>
+    </div>
+  </div>
+      <div className="border-black border-2 m-2 bg-yellow-100 text-2xl rounded-2xl pr-4 pl-4  min-w-[20rem] h-[12rem]">
+        Fiction Feed
+        <div className="bookcontainer w-[auto] flex justify-between overflow-auto ">
+        <div className="overflow-x-auto flex justify-between flex-row gap-10" style={{flexWrap: 'nowrap', overflowX: 'auto'}}>
+            {books.map((book) => (
+                <div className="text-lg align-center flex-wrap flex justify-between ">
+                    <img key={randomBookId}
+                        src="/bookcover.jpeg"
+                        className="object-cover h-[7rem] min-w-[6rem] "
+                        alt=""
+                    />
+                    {randomBookId}
+                </div>
+            ))}
+        </div>
+    </div>
+  </div>
+      <div className="border-black border-2 m-2 bg-green-200 text-2xl rounded-2xl pr-4 pl-4  min-w-[20rem] h-[12rem]">
+        Anime Feed
+        <div className="bookcontainer w-[auto] flex justify-between overflow-auto ">
+        <div className="overflow-x-auto flex justify-between flex-row gap-10" style={{flexWrap: 'nowrap', overflowX: 'auto'}}>
+            {books.map((book) => (
+                <div className="text-lg align-center flex-wrap flex justify-between ">
+                    <img key={randomBookId}
+                        src="/bookcover.jpeg"
+                        className="object-cover h-[7rem] min-w-[6rem] "
+                        alt=""
+                    />
+                    {randomBookId}
+                </div>
+            ))}
+        </div>
+    </div>
+  </div> */}

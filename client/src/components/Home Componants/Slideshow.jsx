@@ -1,5 +1,5 @@
 import React from 'react'
-import bokimg from '/the secret.jpeg'
+import bokimg from '/public/the secret.jpeg'
 const Slideshow = () => {
   return (
     <>
