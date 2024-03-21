@@ -7,11 +7,12 @@ const Categoriesdemo = () => {
 
   useEffect(() => {
     axios.get('http://localhost:5000/get-files',
-  //  {   headers: {
+   {
+      //  headers: {
       //   'Access-Control-Allow-Origin' : '*',
       //   'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
       // },
-      // withCredentials: false}
+      withCredentials: false}
       )
       .then(response => {
         setBooks(response.data.data);

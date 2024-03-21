@@ -1,7 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaBook } from "react-icons/fa";
 const Header = () => {
+   const navigateTo = useNavigate();
+  const gotoprofile = () =>{
+   navigateTo('/profile')
+  }
   return (
     <>
       <div  className="h-16 w-[100%] text-black font-serif border-black border-b-2 flex bg-yellow-100 text-3xl justify-between pr-5 pl-5 items-center">
@@ -13,9 +18,9 @@ const Header = () => {
               <h3>Library</h3>
             </div>
             <div className="grid place-items-center cursor-pointer">
-              <Link to="/profile">
-                <FaBook className="mr-2" />
-              </Link>
+             
+                <FaBook onClick={gotoprofile} className="mr-2" />
+
             </div>
           </div>
         </div>

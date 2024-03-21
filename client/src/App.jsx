@@ -5,6 +5,7 @@ import Profile from './pages/profile'
 import Viewpdf from './pages/Viewpdf';
 import Upload from './pages/Upload';
 import Login from './pages/Login';
+import './index.css'
 // import Form from './components/Home Componants/form'
 function App() {
 

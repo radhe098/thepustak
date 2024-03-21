@@ -28,8 +28,8 @@ function Userdetails() {
                 <div className="h-40 flex justify-center">
                   <img src="/ppicsample.jpg" alt='ok' className="rounded-3xl h-auto border-none absolute w-48 " />         
                 </div>
-                <h3 className="text-xl font-semibold leading-normal text-blueGray-700 ml-2 px-4  border rounded-md">
-                Ratan Tata
+                <h3 className="text-xl font-semibold leading-normal text-blueGray-700  px-4  border rounded-md">
+                Jhon Doe
               </h3>
               <div>Bio Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur mollitia, magnam qui exercitationem neque, facere, tempore porro quidem nesciunt nihil delectus ipsa voluptate doloribus corrupti iste soluta vitae assumenda itaque.</div>
                 </div>
