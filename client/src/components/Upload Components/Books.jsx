@@ -11,6 +11,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 function Books() {
   const [title, setTitle] = useState("");
   const [file, setFile] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
   const [allImage, setAllImage] = useState(null);
   const [pdfFile, setPdfFile] = useState(null);
   const [category, setCategory] = useState(" ");
@@ -32,6 +33,7 @@ function Books() {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("file", file);
+    formData.append("thumbnail", thumbnail);
     formData.append("category",category);
     console.log(title, file , category);
   
@@ -59,7 +61,7 @@ function Books() {
         getPdf();
       }
     } catch (error) {
-      console.error("Error uploading image: ", error);
+      console.error("Error occured in uploading image: ", error);
     }
   };
   const showPdf = (pdf) => {
@@ -94,6 +96,13 @@ function Books() {
         onChange={(e) => setFile(e.target.files[0])}
         className="border p-2"
       />
+        <input
+        type="file" 
+        accept="image/*"
+        required
+        onChange={(e) => setThumbnail(e.target.files[0])}
+        className="border p-2"
+         />
       
       <button type="submit" className="bg-blue-500 text-white p-2 rounded">
         Submit

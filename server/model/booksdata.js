@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const PdfDetailsSchema = new mongoose.Schema(
-  {
+  { 
+    thumb: String,
     pdf: String,
     title: String,
     category: String,
-    rating:Number,
-  
+    rating: Number,
   },
   { collection: "PdfDetails" }
 );
