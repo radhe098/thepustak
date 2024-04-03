@@ -1,31 +1,21 @@
 import React from 'react'
+import { FaCircleArrowRight } from "react-icons/fa6";
+import Slides from '../Hooks/Slides';
 import bokimg from '/public/the secret.jpeg'
 const Slideshow = () => {
+  const s = ["https://media.istockphoto.com/id/1326978045/photo/lonely-big-tree-growing-up-on-ancient-books-like-a-painting-in-literature.jpg?s=1024x1024&w=is&k=20&c=g8ecENdt3_8cTp-u7xEdypASED0jOgpR9qeGNYKFD0M=","https://images.unsplash.com/photo-1500754088824-ce0582cfe45f?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1466854076813-4aa9ac0fc347?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://media.istockphoto.com/id/619245784/vector/fairytale-characters.jpg?s=612x612&w=0&k=20&c=Ip9oCVO6ifO2d2JbInYBCpqIiQD1dLsbAk7CMoByRjI"]
   return (
     <>
-    {/* style={{ backgroundColor: "#ffffff"}} */}
+      < div style={{ backgroundColor: "#C6F6D5"}} className=' border-black border m-4 rounded-3xl '>
+  
+            <Slides slides={s} className=""/>
 
-
-      <div style={{ backgroundColor: "#C6F6D5"}} className='h-[24rem] min-w-[32rem]  border-black border m-4 rounded-3xl overflow-hidden '>
-        <div className='border-b-black border-1 h-[22rem] w-[auto] flex justify-around'>
-        <div class="h-auto flex items-center justify-center">
-    <p class="text-center text-6xl">&lt;</p>
-        </div>
-        <div className='relative flex justify-between gap-2'>
-        <div className='relative flex flex-col lg:flex-row justify-between gap-2'>
-    <img src="public/the secret.jpeg" className='object-cover rounded-3xl mt-3 lg:mt-0 lg:h-[22rem] min-w-[28rem] w-full lg:w-auto font-poppins' alt="" />
-    <div className='absolute inset-0 overflow-auto bg-opacity-50 top-72 right-0 w-auto h-[20%] mx-6 flex items-center justify-center '>
-        <div className='lg:max-w-[64rem] p-4 text-white'>
-            The Secret is a 2006 self-help book by Rhonda Byrne, based on the earlier film of the same name. It is based on the belief of the pseudoscientific law of attraction, which claims that thought alone can influence objective circumstances within ones life . The book alleges energy as assurance of its effectiveness. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore quasi consequuntur nesciunt aperiam, necessitatibus voluptatem, molestias inventore natus voluptates eos tempora? Non ab veritatis unde a eum deleniti, doloremque asperiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero dolore voluptate minima sunt placeat, reprehenderit voluptates. Minus deserunt dolore, placeat doloribus consequuntur officiis quae quibusdam reiciendis eligendi quam, adipisci nisi!
-        </div>
+         <div className='absolute top-0 h-[full] w-full justify-between items-center flex text-white'>  <button><FaCircleArrowRight/></button>
+         <button><FaCircleArrowRight/></button>
+         </div>
+          
+        
     </div>
-</div>
-</div>
-        <div class="h-auto flex items-center justify-center">
-    <p class="text-center text-6xl">&gt;</p>
-        </div>
-                </div>
-      </div>  
     </>
   )
 }

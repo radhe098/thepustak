@@ -23,11 +23,11 @@ function Userdetails() {
         <div className="relative flex flex-col min-w-0 break-words -mt-12 bg-white w-auto mb-6 shadow-xl rounded-lg">
           <div className="px-6">
             <div className="flex flex-wrap justify-between mt-12">
-              <div className=" w-80 order-1 flex justify-around  ">
+              <div className=" w-80 order-1 flex justify-between  ">
                 <div className=' '>
                 <div className="h-40 flex justify-center">
                   <img src="/ppicsample.jpg" alt='ok' className="rounded-3xl h-auto border-none absolute w-48 " />         
-                </div>
+                 </div>
                 <h3 className="text-xl font-semibold leading-normal text-blueGray-700  px-4  border rounded-md">
                 Jhon Doe
               </h3>

@@ -31,16 +31,23 @@ const Categoriesdemo = () => {
         <div className="overflow-x-auto flex m-4 justify-between flex-row " style={{flexWrap: 'nowrap', overflowX: 'auto'}}>
             {books.map((  book) =>{ return(
                   <> 
-                <div className="text-lg flex-wrap flex justify-between ">
-                   <div className="flex flex-col justify-between items-center m-4 w-40 rounded-lg bg-teal-200  border-black">
-                    <div className="h-[12rem] wra"> 
-                   <div className=" mt-5 relative h-[120px] w-[90px] bg-cover bg-center">
-    <img className="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-lg" src={`http://localhost:5000/files/${book.thumb}`} alt="" />
+                <div className="text-lg flex-wrap flex justify-between">
+  <div className="flex flex-col justify-between items-center m-4 w-40 rounded-lg bg-teal-200 h-[14rem] border-black">
+    <div className="h-48 ml-3 cursor-pointer">
+      <div className="flex justify-center mt-4 items-center relative h-[120px] w-[90px] bg-cover bg-center">
+        <img className="absolute w-full h-full object-cover rounded-lg shadow-lg" src={`http://localhost:5000/files/${book.thumb}`} alt="" />
+      </div>
+      <div className="w-32">
+        <h1 className="truncate text-lg font-semibold">{book.title}</h1>
+      </div>
+      <div>
+        <h1 className="text-md ml-3 italic">{book.category}</h1>
+      </div>
+    </div>
+  </div>
 </div>
-              <h1 className="text-xl font-semibold"> {book.title}</h1>
-              <div className="w-20 overflow-hidden"> <h2 className=" text-lg ml-3 font-mono"> {book.pdf}</h2></div>
-                  <h1 className="text-lg ml-3 italic">{book.category} </h1></div>
-                </div></div></>
+
+                </>
             )})}  
         </div>  
     </div>

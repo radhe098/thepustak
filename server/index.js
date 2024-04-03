@@ -19,7 +19,8 @@ app.use('/', userRoute);
 app.use('/', uploadRoute);
 
 // setting mongoose connection
-const uri = "mongodb+srv://radhey:Dholakpur098@cluster0.e3dfdbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// const uri = "mongodb+srv://radhey:Dholakpur098@cluster0.e3dfdbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb://127.0.0.1:27017"
 
 
  mongoose.connect(uri).then(() =>{
