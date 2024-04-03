@@ -6,7 +6,7 @@ import {
 export default function Carousel({ slides }) {
   let [current, setCurrent] = useState(0);
 
-  let previousSlide = () => {
+  let previousSlide = () => {   
     if (current === 0) setCurrent(slides.length - 1);
     else setCurrent(current - 1);
   };
