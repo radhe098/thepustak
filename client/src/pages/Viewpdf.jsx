@@ -2,12 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Document, Page } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
-const PdfViewer = () => {
+const PdfViewer = ({ file }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1);
   const containerRef = useRef(null);
-
   useEffect(() => {
     function handleScroll() {
       const container = containerRef.current;
@@ -52,7 +51,7 @@ const PdfViewer = () => {
 
   return (
     <div className="pdf-viewer bg-slate-600">
-      <div className="pdf-toolbar ">
+      <div className="pdf-toolbar">
         <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
           Prev
         </button>
@@ -63,10 +62,7 @@ const PdfViewer = () => {
         <button onClick={zoomOut}>Zoom Out</button>
       </div>
       <div className="pdf-document" ref={containerRef}>
-        <Document
-          file="/Jujutsu Kaisen - CH 051 @Manga_Gallery.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
+        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
           {Array.from(new Array(numPages), (el, index) => (
             <div key={`page_${index + 1}`} className="pdf-page">
               <Page pageNumber={index + 1} scale={scale} />

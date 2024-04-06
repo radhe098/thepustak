@@ -53,7 +53,7 @@ router.post("/upload-files", upload.fields([{ name: 'file', maxCount: 1 }, { nam
   } catch (error) {
     console.error(error); 
     res.json({ status: error });
-  }
+}
 });
 router.get("/get-files", async (req, res) => {  
   try {

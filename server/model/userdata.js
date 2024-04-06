@@ -1,13 +1,22 @@
+const { time } = require("console");
 const mongoose = require("mongoose");
 const userdataschema = new mongoose.Schema(
   {
-    uname: String,
-    email: String,
-    password: String,
-    follower:Number,
-    following:Number
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
   },
-  { collection: "UserData" }
+  {timestamps: true},
+  {collection: "UserData" }
 );
 
 module.exports = mongoose.model("UserData", userdataschema); 
