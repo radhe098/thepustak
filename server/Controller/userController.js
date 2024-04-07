@@ -9,13 +9,13 @@ const registerUser  = asyncHandler(async(req, res) =>{
     const {name, email, password} = req.body;
     if (!name){
         res.status(400)
-        throw new Error('enter all name')
+        throw new Error('error in name')
     }else if (!email){
         res.status(400)
-        throw new Error('enter email')
+        throw new Error('error in email')
     }else if (!password){
         res.status(400)
-        throw new Error('enter pass')
+        throw new Error('error in pass')
     }
      
 
@@ -62,15 +62,15 @@ const registerUser  = asyncHandler(async(req, res) =>{
 // @desc        authenticate a user
 // @access      Public
 // route        POST api/user/login
-const loginUser  = asyncHandler(async(req, res) =>{
-    res.json({message:'login a user'})
-})
+// const loginUser  = asyncHandler(async(req, res) =>{
+    // res.json({message:'login a user'})
+// })
 // @desc        Register a user
 // @access      Public
 // route        GET api/user/me
-const getUser = asyncHandler(async(req, res) =>{
-    res.json({message:' user data'})
-})
+// const getUser = asyncHandler(async(req, res) =>{
+//     res.json({message:' user data'})
+// })
 
 
- module.exports ={ loginUser, registerUser, getUser}
+ module.exports ={  registerUser}
