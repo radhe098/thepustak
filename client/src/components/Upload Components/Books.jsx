@@ -8,11 +8,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-function Books() {
-  const [title, setTitle] = useState("");
-  const [file, setFile] = useState("");
-  const [thumbnail, setThumbnail] = useState("");
-  const [allImage, setAllImage] = useState(null);
+export default function Books() {
+  const [title, setTitle] = useState("");  //title of the pdf
+  const [file, setFile] = useState("");         //pdf file
+  const [thumbnail, setThumbnail] = useState("");     //thubmnail img 
+  const [allImage, setAllImage] = useState(null);     //
   const [pdfFile, setPdfFile] = useState(null);
   const [category, setCategory] = useState(" ");
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -27,7 +27,7 @@ function Books() {
     console.log(result.data.data);
     setAllImage(result.data.data);
   };
-  const submitImage = async (e) => {
+   const submitImage = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("title", title);
@@ -67,6 +67,7 @@ function Books() {
     setPdfFile(`http://localhost:5000/files/${pdf}`);
     console.log("pdf loaded");
   };
+  
   return (
     <div className="flex justify-center items-center h-auto bg-yellow-100">
   <div className="border-black border mx-auto p-4 bg-white w-[740px] h-auto">
@@ -135,5 +136,3 @@ function Books() {
 </div>
   );
 }
-export default Books;
-

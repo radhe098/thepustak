@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Profile from './pages/profile'
 import Viewpdf from './pages/Viewpdf';
 import Upload from './pages/Upload';
+import Register from './pages/Register';
 import Login from './pages/Login';
 import './index.css'
 
@@ -13,8 +14,9 @@ function App() {
     { path: '/', element: <Home /> },
     { path: '/profile', element: <Profile /> },
     // { path: '/form', element: <Form /> },
-    {path: '/view-pdf', element:<Viewpdf/>},
+    {path: '/view-pdf/:pdfName', element:<Viewpdf/>},
     {path: '/upload', element:<Upload/>},
+    {path: '/register', element:<Register/>},
     {path: '/login', element:<Login/>}
   ]));
   return (

@@ -1,4 +1,4 @@
-const pdf2pic = require("pdf2pic");
+// const pdf2pic = require("pdf2pic");
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");

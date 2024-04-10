@@ -17,26 +17,16 @@ const registerUser  = asyncHandler(async(req, res) =>{
         res.status(400)
         throw new Error('error in pass')
     }
-     
 
-    // if (! password){
-    //     res.status(400)
-    //     throw new Error('enter pass')
-    // }
     const userExists = await User.findOne({email})
-
     if (userExists){
         res.status(400).json({ error: 'User already exists' });
         return;
     }
-   
-
-    // hashing password
-
+       // hashing password
     const salt = await bcrypt.genSalt(10)
     const hashedPass = await bcrypt.hash(password, salt)
     // create user
-
     const user = await User.create({
         name:name, email:email, password:hashedPass
     })
@@ -47,6 +37,7 @@ const registerUser  = asyncHandler(async(req, res) =>{
             name:user.name,
             email:user.email
         })
+        console.log(user)
         console.log("successfully saved to DB")
     }
     else{
@@ -56,21 +47,38 @@ const registerUser  = asyncHandler(async(req, res) =>{
     // res.json({message:'Register a user'})
 })
 
-
-
-
 // @desc        authenticate a user
 // @access      Public
-// route        POST api/user/login
-// const loginUser  = asyncHandler(async(req, res) =>{
-    // res.json({message:'login a user'})
-// })
+// route        POST auth/login
+const loginUser  = asyncHandler(async(req, res) =>{
+     const { email, password } = req.body
+
+  // Check for user email
+  const user = await User.findOne({ email })
+
+  if (user && (await bcrypt.compare(password, user.password))) {
+    res.json({
+      _id: user.id,
+      name: user.name,
+      email: user.email,
+      token: generateToken(user._id),
+    })
+  } else {
+    res.status(400)
+    throw new Error('Invalid credentials')
+  }
+})
 // @desc        Register a user
 // @access      Public
-// route        GET api/user/me
-// const getUser = asyncHandler(async(req, res) =>{
-//     res.json({message:' user data'})
-// })
+// route        GET auth/me 
+const getUser = asyncHandler(async(req, res) =>{
+    res.status(200).json(req.user)})
 
-
- module.exports ={  registerUser}
+const generateToken = (id) => {
+        return jwt.sign({ id }, process.env.JWT_SECRET, {
+          expiresIn: '28d',
+        })
+      }
+      
+ module.exports ={   loginUser,
+    getUser ,registerUser}
