@@ -7,7 +7,7 @@
     <CreateDocument>
       <CreatePage>
         <View wrap={true}>
-          {/* fancy things here */}
+          
         </View>
       </CreatePage>
     </CreateDocument>
@@ -21,12 +21,17 @@
       setNumPages(numPages);
     }
 
+    const containerStyle = {
+      width: props.size === 'large' ? '1100px' : '650px',
+      height: props.size === 'large' ? '800px' : '550px',
+      margin: props.size === 'large' ? '40px' : '10px',
+    };
     return (
-      <div className="pdf-div w-[500px] h-[300px]">
-        <p>
+      <div className="pdf-div overflow-hidden bg-white  overflow-y-scroll rounded-lg border border-black pl-[-40px]" style={containerStyle}>
+        <p className="sticky overflow-auto">
           Page {pageNumber} of {numPages}
         </p>
-        <Document file={props.pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
+        <Document className="pl-8 rounded-lg *:" file={props.pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
           {Array.from(new Array(numPages), (el, index) => (
             <DisplayPage
               key={`page_${index + 1}`}
@@ -42,5 +47,5 @@
       </div>
     );
   }
-
+  
   export default Pdfcomp;

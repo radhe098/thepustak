@@ -1,12 +1,13 @@
-import {React, createElement, useState} from 'react';
+import {React, createElement,useEffect, useState} from 'react';
 import { LiaEdit } from "react-icons/lia";
+import {useNavigate} from 'react-router-dom';
 // import Link from 'react';
 
 function Userdetails() {  
  const [uploaedebooks, setUploedebooks] = useState("");
- const editprofile=()=>{
-      
- }
+
+ const navigateTo = useNavigate();
+   
   return (
     <main className="profile-page">
     <section className="relative block ">
@@ -50,12 +51,14 @@ function Userdetails() {
               </div>
               <div className="">
                 <div className=" ml-6 px-3 ">
-                <button onClick={editprofile()}><LiaEdit size={30}/></button>
-                  <button className="bg-pink-500 w- active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none mb-4 ml-8 w-48 ease-linear transition-all duration-150" type="button">
-                    Connect
+                <button><LiaEdit size={30}/></button>
+                  <button className="bg-pink-500 w- active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none mb-4 ml-8 w-48 ease-linear transition-all duration-150" type="button" onClick={()=>{ 
+                   navigateTo('/upload'); 
+                }}>
+                    Upload a Book
                   </button>
 
-                </div>
+                </div>  
               </div></div>
               
             </div>

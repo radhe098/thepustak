@@ -2,7 +2,7 @@
     import axios from "axios";
     import PDFViewer from '../../pages/Viewpdf';
     import PdfComp from '../Upload Components/pdfcomp';
-  const Categoriesdemo = () => {
+  const Categoriesdemo = (props) => {
     const [books, setBooks] = useState([]);
     const [selectedBook, setSelectedBook] = useState(null);
     const [pdf, setPdf] = useState(null);
@@ -27,11 +27,17 @@
         });
     }, []);
     
-    
-
     return (
       <>
         {selectedBook && <PDFViewer file= {`http://localhost:5000/files/${pdf}`} />} {/* Pass the file property to PDFViewer */}
+        <div className="border-black border-2  bg-gray-800 text-2xl min-w-[20rem] h-[3rem] pt-1 flex-wrap overflow-hidden overflow-x flex justify-left gap-8">
+        <div className=" bg-yellow-200 text-black px-3  uppercase mx-2" style={{ transform: 'skew(-20deg)' }}> Sort By Categories </div>
+          <div className="flex justify-center gap-8">
+          <div><button className="text-white uppercase  mx-2">Learning</button></div>
+          <div><button className="text-white uppercase  mx-2">Fiction</button></div>
+          <div><button className="text-white uppercase  mx-2">Non-Fiction</button></div>
+          <div><button className="text-white uppercase  mx-2">Manga</button></div>
+        </div></div>
         <div className="border-black border-2 m-2 bg-gray-800 text-2xl rounded-2xl pr-4 pl-4 min-w-[20rem] h-[28rem] flex flex-wrap overflow-hidden overflow-x">
           <div className="nameoffeed text-2xl text-green-900 bg-white px-3 h-8 opacity-50 rounded-3xl">Recent feed</div>
           <div className="bookcontainer w-[auto] flex justify-center overflow-hidden">
@@ -60,7 +66,6 @@
             </div>
           </div>
         </div>
-            <PdfComp className="border-black border-2" pdfFile={pdffile}/>
       </>
     );
   }

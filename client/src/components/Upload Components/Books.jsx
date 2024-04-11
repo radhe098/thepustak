@@ -7,8 +7,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
 ).toString();
-
 export default function Books() {
+  const [pdfvisibel, setPdfvisible]= useState(false);
   const [title, setTitle] = useState("");  //title of the pdf
   const [file, setFile] = useState("");         //pdf file
   const [thumbnail, setThumbnail] = useState("");     //thubmnail img 
@@ -16,6 +16,11 @@ export default function Books() {
   const [pdfFile, setPdfFile] = useState(null);
   const [category, setCategory] = useState(" ");
   const [uploadProgress, setUploadProgress] = useState(0);
+
+  const divvisible = ()=> {
+    setPdfvisible(true);
+  }
+
   const handlecategory = (event) =>{
     setCategory(event.target.value)
   }
@@ -65,14 +70,18 @@ export default function Books() {
   };
   const showPdf = (pdf) => {
     setPdfFile(`http://localhost:5000/files/${pdf}`);
+    divvisible();
     console.log("pdf loaded");
   };
   
   return (
-    <div className="flex justify-center items-center h-auto bg-yellow-100">
-  <div className="border-black border mx-auto p-4 bg-white w-[740px] h-auto">
+    <div className="items-center h-screen p-4 bg-slate-200">
+      <div className="flex justify-between  gap-40">
+
+  <div className=" w-4/12 h-[500px] ">
+    <div className="border-black border rounded-lg  mx-auto p-4 bg-white ">
     <form onSubmit={submitImage} className="flex flex-col space-y-4">
-      <h4 className="text-lg font-bold">Upload Pdf in React</h4>
+      <h4 className="text-lg font-bold">Contribute To The Pustak Club</h4>
       <input
         type="text"
         placeholder="Title"
@@ -95,7 +104,7 @@ export default function Books() {
         required
         onChange={(e) => setFile(e.target.files[0])}
         className="border p-2"
-      />
+      /> 
         <input
         type="file" 
         accept="image/*"
@@ -110,28 +119,34 @@ export default function Books() {
     </form>
     <div>
   Upload progress: {uploadProgress}%
-</div>
-    <div className="mt-4">
-      <h4 className="text-lg font-bold">Uploaded PDF:</h4>
-      <div className="mt-2">
+</div></div>
+    <div className="mt-4 border-black border rounded-lg  mx-auto p-4 overflow-hidden overflow-x-scroll bg-white">
+      <h4 className="text-lg mt-[-20px] bg-yellow-100 border-1 w-48 rounded-xl "> Recently Uploaded PDF:</h4>
+
+      <div className="mt-2 flex h-[100px]">
+
         {allImage == null
           ? ""
           : allImage.map((data) => {
               return (
-                <div key={data.title} className="mt-2 h-auto">
+                <div key={data.title} className="h-auto m-4 bg-emerald-200 p-3 min-w-36">
                   <h6 className="font-medium">Title: {data.title}</h6>
                   <button
-                    onClick={() => showPdf(data.pdf)}
-                    className="bg-green-500 text-white p-2 rounded mt-2"
-                  >
+                    onClick={() => showPdf(data.pdf) && divvisible}
+                    className="bg-green-500 text-white p-1 rounded-sm  mt-2">
                     Show Pdf
                   </button>
                 </div>
               );
             })}
+            <hr className=" mt-7 border-b-2 border-t-slate-300"/>
       </div>
     </div >
-    <PdfComp className="border-black border-2" pdfFile={pdfFile}/>
+
+    
+  </div>
+  { pdfvisibel && <div className="bg-white rounded-lg p-2"><PdfComp size="small" className=" border-2" pdfFile={pdfFile}/></div>}
+  
   </div>
 </div>
   );
