@@ -22,9 +22,9 @@
     }
 
     const containerStyle = {
-      width: props.size === 'large' ? '1100px' : '650px',
-      height: props.size === 'large' ? '800px' : '550px',
-      margin: props.size === 'large' ? '40px' : '10px',
+      width: props.size === 'large' ? '69rem' : '41rem',
+      height: props.size === 'large' ? '50rem' : '34rem',
+      margin: props.size === 'large' ? '2.5rem' : '0.6rem',
     };
     return (
       <div className="pdf-div overflow-hidden bg-white  overflow-y-scroll rounded-lg border border-black pl-[-40px]" style={containerStyle}>
