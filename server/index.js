@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const uploadRoute = require('./route/uploads');
 
+
 //api
 
 app.use('/', uploadRoute);
@@ -21,7 +22,7 @@ app.use('/auth', require('./route/userRoutes') );
 
 // setting mongoose connection
 
-const uri = process.env.MONGO_URI ;
+const uri = process.env.LOCAL_URI ;
    mongoose.connect(uri).then(() =>{
       console.log('Database connected');
    }).catch((e)=>{

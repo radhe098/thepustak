@@ -41,12 +41,32 @@ const App = () => {
     <>
       <RouterProvider router={Router} />
       {showDialog && (
- <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 border border-gray-300 rounded-xl shadow-md z-50 duration-150">        
-   <h2>Dialog Box</h2>
-          <p>This is a dialog box.</p>
-          <button onClick={() => setShowDialog(false)}>Close</button>
+ <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 p-4 border h-[20rem] w-[30rem] border-gray-300 rounded-xl shadow-md opacity-90 z-50 duration-150">    
+ <div className='flex-col '>    
+   <h2 className='text-center text-black font-semibold text-2xl '>Quick Introduction of Webpage</h2>
+   <div className='flex justify-around text-lg mt-4 '>
+   <div className='flex-col space-y-2 '>
+          <h1>Routes</h1>
+          <h2>/upload</h2>
+          <h2>/profile</h2>
+          <h2>/lib</h2>
+          <h2>/login</h2>
+          <h2>/register</h2>
+          <p></p>
+          </div>
+   <div className='flex-col space-y-2'>
+          <h1>Description</h1>
+          <h2>Upload Page</h2>
+          <h2>Profile Page</h2>
+          <h2>Library Page</h2>
+          <h2>login page</h2>
+          <h2>Register Page</h2>
+          <p></p>
+          </div>
+   </div>
+          <button className=' top-0 right-0 fixed mr-2 transform translate-x-0 bg-red-300 px-3 border-black border ' onClick={() => setShowDialog(false)}>Close</button>
           {document.addEventListener('keydown', (event) => { if (event.key === 'Escape') {  setShowDialog(false);} })}
-        </div>
+        </div></div>
       )}
     </>
   );

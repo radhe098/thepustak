@@ -20,7 +20,7 @@ const setthepass =(event)=>{
 const onSubmit = async (e)=>{
 await e.preventDefaultvalue();
 const formData= new FormData();
-formData.append("name",name);
+// formData.append("name",name);
 formData.append("email",email);
 formData.append("password",password);
 
@@ -56,14 +56,8 @@ try {
       <div className=' bg-slate-800 w-3/12 mt-2 m-6 rounded-3xl p-4 flex-1' >
         {/* <img src="/Literature.jpg" alt="" className='' /> */}
         <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6 p-8 rounded-lg bg-green-200" method="POST">
+          <form className="space-y-6 p-8 rounded-lg bg-green-200" onSubmit={navigateTo('/')} method="POST">
           <div className="sm:mx-auto sm:w-full items-center sm:max-w-sm">
-          {/* <div className="mx-auto m:mx-auto sm:w-full sm:max-w-sm h-32 w-16 rounded-3xl bg-cover">
-            <img
-            className=""
-            src="/infi.png"
-            alt="Your Company"/></div> */}
-          
            <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 ">
             Login Yourself
           </h2>
