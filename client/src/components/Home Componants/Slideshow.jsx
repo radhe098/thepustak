@@ -6,11 +6,12 @@ import 'slick-carousel/slick/slick-theme.css';
 const Slideshow = () => {
   const slides = [
     [
-      'https://cdn.pixabay.com/photo/2023/11/22/15/20/books-8405721_960_720.jpg',
-      '/Literature.jpg'
+      '/Literature.jpg',
+      '/slide2.jpg'
+      
     ],
     [
-      'https://cdn.pixabay.com/photo/2016/02/16/21/07/books-1204029_960_720.jpg',
+      '/Slide3.jpg',
       'https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg'
     ],
     [

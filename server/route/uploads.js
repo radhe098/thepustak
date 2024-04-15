@@ -57,7 +57,7 @@ router.post("/upload-files", upload.fields([{ name: 'file', maxCount: 1 }, { nam
 });
 router.get("/get-files", async (req, res) => {  
   try {
-    await PdfSchema.find({}).then((data) => { // Wrap the code inside a try-catch block
+    await PdfSchema.find({}).then((data) => {   
       res.send({ status: "ok", data: data });
     });
   } catch (error) {

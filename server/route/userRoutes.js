@@ -11,5 +11,4 @@ router.post('/register', registerUser )
 // router.get('/register', registerUser )
 router.post('/login',loginUser )
 router.get('/me',getUser )
-
 module.exports = router;

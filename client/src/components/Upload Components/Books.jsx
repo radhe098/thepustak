@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { pdfjs } from "react-pdf";
 import PdfComp from "./pdfcomp";
-import pdfUrl from "/1.pdf";
+// import pdfUrl from "/1.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
@@ -59,7 +59,6 @@ export default function Books() {
       );
   
       console.log(result);
-  
       if (result.data.status === "ok") {
         alert("Uploaded Successfully!!!");
         getPdf();
@@ -70,8 +69,9 @@ export default function Books() {
   };
   const showPdf = (pdf) => {
     setPdfFile(`http://localhost:5000/files/${pdf}`);
+    console.log(`pdf loaded ${pdfFile}`);
+
     divvisible();
-    console.log("pdf loaded");
   };
   
   return (
@@ -112,7 +112,7 @@ export default function Books() {
         onChange={(e) => setThumbnail(e.target.files[0])}
         className="border p-2"
          />
-      
+
       <button type="submit" className="bg-blue-500 text-white p-2 rounded">
         Submit
       </button>
@@ -146,7 +146,6 @@ export default function Books() {
     
   </div>
   { pdfvisibel && <div className="bg-white rounded-lg p-2"><PdfComp size="small" className=" border-2" pdfFile={pdfFile}/></div>}
-  
   </div>
 </div>
   );
