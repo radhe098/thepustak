@@ -10,7 +10,7 @@ const Categoriesdemo = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/get-files")
+      .get("https://thepustak.vercel.app/get-files")
       .then((response) => {
         setBooks(response.data.data);
       })
@@ -29,7 +29,7 @@ const Categoriesdemo = (props) => {
     localStorage.setItem('bookData', JSON.stringify(book));
   };
   const showPdf = (pdf) => {
-    setPdfFile(`http://localhost:5000/files/${pdf}`);
+    setPdfFile(`https://thepustak.vercel.app/files/${pdf}`);
     console.log("pdf loaded");
   };
   const filterBooksByCategory = (category) => {
