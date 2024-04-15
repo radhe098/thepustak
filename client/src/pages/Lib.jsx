@@ -13,7 +13,7 @@ const Lib = (props) => {
 
 
   const fetchPdf = (pdf) => {
-    setPdfRoute(`http://localhost:5000/files/${pdf}`)
+    setPdfRoute(`https://thepustak.vercel.app/${pdf}`)
     setOpenPdf(true);
     if (pdfViewerRef.current) {
       pdfViewerRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -23,7 +23,7 @@ const Lib = (props) => {
   useEffect(() => {
     setSelectedBook(localStorage.getItem("bookData"))
     axios
-      .get("http://localhost:5000/get-files")
+      .get("https://thepustak.vercel.app/get-files")
       .then((response) => {
         setBooksall(response.data.data)
       })
@@ -46,7 +46,7 @@ const Lib = (props) => {
           {targetbook.map((book, index) => (
             <div key={index} className='w-3/4 m-4 flex bg-yellow-200 h-60 p-3 justify-around rounded-2xl'>
               <div className='bg-slate-600 rounded-lg h-52 w-48'>
-                <img className=" w-[190px] h-[210px] object-cover rounded-lg shadow-lg" src={`http://localhost:5000/files/${book.thumb}`} alt="" />
+                <img className=" w-[190px] h-[210px] object-cover rounded-lg shadow-lg" src={`https://thepustak.vercel.app/files/${book.thumb}`} alt="" />
               </div>
               <div className='bg-slate-600 rounded-lg h-52 w-80 p-3 space-y-4 text-white uppercase'>
                 <div>bookname: {book.title}</div>

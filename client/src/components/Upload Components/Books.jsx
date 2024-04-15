@@ -69,7 +69,7 @@ export default function Books() {
     }
   };
   const showPdf = (pdf) => {
-    setPdfFile(`http://localhost:5000/files/${pdf}`);
+    setPdfFile(`https://thepustak.vercel.app/${pdf}`);
     divvisible();
     console.log("pdf loaded");
   };

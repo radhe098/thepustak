@@ -29,7 +29,7 @@ const Categoriesdemo = (props) => {
     localStorage.setItem('bookData', JSON.stringify(book));
   };
   const showPdf = (pdf) => {
-    setPdfFile(`http://localhost:5000/files/${pdf}`);
+    setPdfFile(`https://thepustak.vercel.app/${pdf}`);
     console.log("pdf loaded");
   };
   const filterBooksByCategory = (category) => {
@@ -63,7 +63,7 @@ const Categoriesdemo = (props) => {
                     >
                       <div className="h-48 ml-3 cursor-pointer">
                         <div className="flex justify-center mt-4 items-center relative h-[120px] w-[90px] bg-cover bg-center">
-                          <img className="absolute w-full h-full object-cover rounded-lg shadow-lg" src={`http://localhost:5000/files/${book.thumb}`} alt="" />
+                          <img className="absolute w-full h-full object-cover rounded-lg shadow-lg" src={`https://thepustak.vercel.app/files/${book.thumb}`} alt="" />
                         </div>
                         <div className="w-32">
                           <h1 className="truncate text-lg font-semibold">{book.title}</h1>
@@ -84,7 +84,7 @@ const Categoriesdemo = (props) => {
                     >
                       <div className="h-48 ml-3 cursor-pointer">
                         <div className="flex justify-center mt-4 items-center relative h-[120px] w-[90px] bg-cover bg-center">
-                          <img className="absolute w-full h-full object-cover rounded-lg shadow-lg" src={`http://localhost:5000/files/${book.thumb}`} alt="" />
+                          <img className="absolute w-full h-full object-cover rounded-lg shadow-lg" src={`https://thepustak.vercel.app/files/${book.thumb}`} alt="" />
                         </div>
                         <div className="w-32">
                           <h1 className="truncate text-lg font-semibold">{book.title}</h1>
