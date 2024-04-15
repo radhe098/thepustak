@@ -28,7 +28,7 @@ export default function Books() {
     getPdf();
   }, []);
   const getPdf = async () => {
-    const result = await axios.get("http://localhost:5000/get-files");
+    const result = await axios.get("https://thepustak.vercel.app/get-files");
     console.log(result.data.data);
     setAllImage(result.data.data);
   };
@@ -68,7 +68,7 @@ export default function Books() {
     }
   };
   const showPdf = (pdf) => {
-    setPdfFile(`http://localhost:5000/files/${pdf}`);
+    setPdfFile(`https://thepustak.vercel.app/files/${pdf}`);
     console.log(`pdf loaded ${pdfFile}`);
 
     divvisible();
