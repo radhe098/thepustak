@@ -6,11 +6,12 @@ import 'slick-carousel/slick/slick-theme.css';
 const Slideshow = () => {
   const slides = [
     [
-      'https://cdn.pixabay.com/photo/2023/11/22/15/20/books-8405721_960_720.jpg',
-      '/Literature.jpg'
+      '/Literature.jpg',
+      '/slide2.jpg'
+      
     ],
     [
-      'https://cdn.pixabay.com/photo/2016/02/16/21/07/books-1204029_960_720.jpg',
+      '/Slide3.jpg',
       'https://cdn.pixabay.com/photo/2015/07/27/20/16/book-863418_1280.jpg'
     ],
     [
@@ -37,7 +38,7 @@ const Slideshow = () => {
             <div className="flex justify-center">
               {slideImages.map((image, i) => (
                 <div key={i} className="w-1/2">
-                  <img src={image} className="h-[20rem] w-full mt-2 p-2" alt={`slide-${index}-${i}`} />
+                  <img src={image} className="h-[20rem] w-full mt-2 p-1" alt={`slide-${index}-${i}`} />
                 </div>
               ))}
             </div>
@@ -49,4 +50,3 @@ const Slideshow = () => {
 };
 
 export default Slideshow;
-

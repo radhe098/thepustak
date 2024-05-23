@@ -19,7 +19,7 @@ const Header = () => {
   // }
   return (
     <>
-      <div  className="h-16 w-[100%] text-black font-serif border-black border-b-2 flex bg-yellow-100 text-3xl justify-between pr-5 pl-5 items-center">
+      <div  className="h-16 w-[100%] text-yellow-100 font-serif border-black border-b-2 flex bg-gray-800 text-3xl justify-between pr-5 pl-5 items-center">
         <h1 className="text-3xl ml-3 hover:cursor-pointer">The Pustak</h1>
 
         <div>

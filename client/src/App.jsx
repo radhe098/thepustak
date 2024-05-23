@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { useState } from 'react'; // Import useState if you need it
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -41,10 +42,10 @@ const App = () => {
     <>
       <RouterProvider router={Router} />
       {showDialog && (
- <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 p-4 border h-[20rem] w-[30rem] border-gray-300 rounded-xl shadow-md opacity-90 z-50 duration-150">    
+ <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 border h-[25rem] w-[40rem] border-gray-300 rounded-xl shadow-md opacity-90 z-50 duration-150">    
  <div className='flex-col '>    
-   <h2 className='text-center text-black font-semibold text-2xl '>Quick Introduction of Webpage</h2>
-   <div className='flex justify-around text-lg mt-4 '>
+   <h2 className='text-center text-black font-semibold text-3xl '>Quick Introduction of Webpage</h2>
+   <div className='flex justify-around text-xl mt-4 '>
    <div className='flex-col space-y-2 '>
           <h1>Routes</h1>
           <h2>/upload</h2>

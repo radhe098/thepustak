@@ -69,13 +69,13 @@ export default function Books() {
     }
   };
   const showPdf = (pdf) => {
-    setPdfFile(`https://thepustak.vercel.app/${pdf}`);
+    setPdfFile(`http://localhost:5000/files/${pdf}`);
     divvisible();
     console.log("pdf loaded");
   };
   
   return (
-    <div className="items-center h-screen p-4 bg-slate-200">
+    <div className="items-center h-screen p-4 bg-yellow-100">
       <div className="flex justify-between  gap-40">
 
   <div className=" w-4/12 h-[500px] ">

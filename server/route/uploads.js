@@ -48,7 +48,7 @@ router.post("/upload-files", upload.fields([{ name: 'file', maxCount: 1 }, { nam
   const category = req.body.category;
 
   try {
-    await PdfSchema.create({ title: title, pdf: fileName, category: category, thumb: thumbnail});
+      await PdfSchema.create({ title: title, pdf: fileName, category: category, thumb: thumbnail});
     res.send({ status: "ok" });
   } catch (error) {
     console.error(error); 
